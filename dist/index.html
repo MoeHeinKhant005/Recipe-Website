@@ -7,7 +7,19 @@
         <link rel="stylesheet" href="style.css">
         <title>FoodNet - Recipe Website</title>
     </head>
-    <body>
+    <body class="w-full h-screen flex flex-col justify-start items-center bg-white gap-y-6">
+        <!-- Heading -->
+        <h3 class="text-primary text-3xl font-lexend font-medium text-center mt-6">FoodNet<i class='bx bx-network-chart text-primary'></i></h3>
+        <hr class="w-5/6 border-0.5 border-primary">
+        <p class="text-black text-base font-poppins text-center mx-4 "><span class="text-primary">FoodNet</span> is a resource for thousands of recipes from around the globe.</p>
+
+        <!-- Search Bar -->
+        <div class="w-5/6 h-auto flex justify-center items-center">
+            <input type="text" class="foodInput w-5/6 h-12 bg-gray-100 text-black font-poppins outline-none border-0 px-4 placeholder:text-gray-400" placeholder="Search Recipe">
+            <button class="searchBtn w-auto h-12 bg-primary text-white font-poppins text-sm px-6 border-2 border-primary transition-all duration-150 ease-in-out hover:bg-white hover:text-primary">Search</button>
+        </div>
+        <!-- Result Container-->
+        <div class="resultContainer w-full h-auto flex justify-center items-stretch flex-wrap font-poppins gap-3 pb-5"></div>
         <script src="script.js"></script>
     </body>
 </html>
