@@ -11,3 +11,19 @@ async function getData(query){
     const data = response.json();
     return data;
 }
+
+const foodInput = document.querySelector('.foodInput');
+const searchBtn = document.querySelector('.searchBtn');
+const resultContainer = document.querySelector('.resultContainer');
+
+searchBtn.addEventListener('click', e => {
+    if(foodInput.value != ""){
+        getData(foodInput.value).then(data => {
+            if(data.d.length > 0){
+                console.log(data.d);
+            }else{
+                resultContainer.innerHTML = `<p class="text-primary text-center text-lg my-4">Sorry, We couldn't find any recipe!</p>`
+            }
+        });
+    }
+})
