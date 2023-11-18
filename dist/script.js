@@ -7,7 +7,7 @@ const options = {
 };
 
 async function getData(query){
-    const response = await fetch(`https://food-recipes-with-images.p.rapidapi.com/?q=${query}`);
+    const response = await fetch(`https://food-recipes-with-images.p.rapidapi.com/?q=${query}`, options);
     const data = response.json();
     return data;
 }
