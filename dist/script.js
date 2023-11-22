@@ -23,8 +23,14 @@ function createRecipeItems(data){
                 <hr class="w-5/6 border-0.5 border-primary">
                 <span class="text-gray-800 text-xs text-center mx-2.5 line-clamp-2">${data.d[i].Title}</span>
             </div>
-        </div>`
+        </div>`;
     }
+    resultContainer.querySelectorAll('div').forEach(item => {
+        item.addEventListener('click', e => {
+            sessionStorage.setItem('clickedRecipe', e.currentTarget.lastElementChild.lastElementChild.textContent);
+            location.href = "recipe.html"
+        })
+    })
 }
 
 const foodInput = document.querySelector('.foodInput');
