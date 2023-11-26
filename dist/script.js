@@ -27,8 +27,19 @@ function createRecipeItems(data){
     }
     resultContainer.querySelectorAll('.recipeItem').forEach(item => {
         item.addEventListener('click', e => {
+            sendRecipeData(e.currentTarget.lastElementChild.lastElementChild.textContent, queriedData);
+            location.href = "recipe.html";
         })
     })
+}
+
+function sendRecipeData(recipeName, datalist){
+    for(let i = 0; i < datalist.d.length; i++){
+        if(recipeName === datalist.d[i].Title){
+            sessionStorage.setItem('recipeDetail', JSON.stringify(datalist.d[i]));
+        }
+    }
+
 }
 
 const foodInput = document.querySelector('.foodInput');
