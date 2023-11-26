@@ -16,7 +16,7 @@ function createRecipeItems(data){
     resultContainer.innerHTML = "";
     for(let i = 0; i < data.d.length; i++){
         resultContainer.innerHTML += 
-        `<div class="w-5/12 h-auto flex flex-col justify-start items-center bg-white shadow gap-y-3 transition-all duration-150 ease-in-out hover:shadow-lg">
+        `<div class="recipeItem w-5/12 h-auto flex flex-col justify-start items-center bg-white shadow gap-y-3 transition-all duration-150 ease-in-out hover:shadow-lg">
             <img src=${data.d[i].Image} class="w-full h-auto">
             <div class="w-full h-auto flex flex-col justify-center items-center gap-y-3 pb-4">
                 <span class="text-primary text-xs text-center mx-2"><i class="bx bx-food-menu text-primary text-xs"></i> - ${Object.keys(data.d[i].Ingredients).length} Ingredients</span>
@@ -25,10 +25,8 @@ function createRecipeItems(data){
             </div>
         </div>`;
     }
-    resultContainer.querySelectorAll('div').forEach(item => {
+    resultContainer.querySelectorAll('.recipeItem').forEach(item => {
         item.addEventListener('click', e => {
-            sessionStorage.setItem('clickedRecipe', e.currentTarget.lastElementChild.lastElementChild.textContent);
-            location.href = "recipe.html"
         })
     })
 }
@@ -36,12 +34,14 @@ function createRecipeItems(data){
 const foodInput = document.querySelector('.foodInput');
 const searchBtn = document.querySelector('.searchBtn');
 const resultContainer = document.querySelector('.resultContainer');
+let queriedData;
 
 searchBtn.addEventListener('click', e => {
     if(foodInput.value != ""){
         getData(foodInput.value).then(data => {
             if(data.d.length > 0){
-                createRecipeItems(data);
+                queriedData = data;
+                createRecipeItems(queriedData);
             }else{
                 resultContainer.innerHTML = `<p class="text-primary text-center text-lg my-4">Sorry, We couldn't find any recipe!</p>`;
             }
