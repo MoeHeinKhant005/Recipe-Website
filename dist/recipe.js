@@ -13,6 +13,7 @@ function createList(list){
 const recipe = JSON.parse(sessionStorage.getItem('recipeDetail'));
 const recipeDetailContainer = document.querySelector('.recipeDetailContainer');
 if(Object.keys(recipe).length > 0){
+    document.querySelector('title').textContent = recipe.Title;
     recipeDetailContainer.innerHTML = 
     `<span class="w-11/12 text-gray-900 text-2xl font-lexend font-medium text-left px-4">${recipe.Title}</span>
     <img src=${recipe.Image} class="w-5/6 h-auto lg:w-11/12">
