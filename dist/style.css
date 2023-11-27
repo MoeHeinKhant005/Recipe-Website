@@ -880,3 +880,37 @@ video {
     background-color: rgb(239 68 68 / var(--tw-bg-opacity));
   }
 }
+
+@media (min-width: 1024px){
+  .lg\:hidden{
+    display: none;
+  }
+
+  .lg\:w-3\/5{
+    width: 60%;
+  }
+
+  .lg\:w-2\/4{
+    width: 50%;
+  }
+
+  .lg\:w-1\/6{
+    width: 16.666667%;
+  }
+
+  .lg\:w-2\/6{
+    width: 33.333333%;
+  }
+
+  .lg\:w-4\/5{
+    width: 80%;
+  }
+
+  .lg\:w-full{
+    width: 100%;
+  }
+
+  .lg\:w-11\/12{
+    width: 91.666667%;
+  }
+}

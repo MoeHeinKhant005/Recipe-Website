@@ -10,7 +10,7 @@ const recipeDetailContainer = document.querySelector('.recipeDetailContainer');
 if(Object.keys(recipe).length > 0){
     recipeDetailContainer.innerHTML = 
     `<span class="w-11/12 text-gray-900 text-2xl font-lexend font-medium text-left px-4">${recipe.Title}</span>
-    <img src=${recipe.Image} class="w-5/6 h-auto">
+    <img src=${recipe.Image} class="w-5/6 h-auto lg:w-11/12">
 
     <div class="w-11/12 h-auto flex flex-col justify-center items-start gap-y-4">
         <span class="text-gray-900 text-xl font-lexend font-medium text-left mx-2">Ingredients</span>

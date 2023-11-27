@@ -16,7 +16,7 @@ function createRecipeItems(data){
     resultContainer.innerHTML = "";
     for(let i = 0; i < data.d.length; i++){
         resultContainer.innerHTML += 
-        `<div class="recipeItem w-5/12 h-auto flex flex-col justify-start items-center bg-white shadow gap-y-3 transition-all duration-150 ease-in-out hover:shadow-lg md:w-1/4">
+        `<div class="recipeItem w-5/12 h-auto flex flex-col justify-start items-center bg-white shadow gap-y-3 transition-all duration-150 ease-in-out hover:shadow-lg md:w-1/4 lg:w-1/6">
             <img src=${data.d[i].Image} class="w-full h-auto">
             <div class="w-full h-auto flex flex-col justify-center items-center gap-y-3 pb-4">
                 <span class="text-primary text-xs text-center mx-2"><i class="bx bx-food-menu text-primary text-xs"></i> - ${Object.keys(data.d[i].Ingredients).length} Ingredients</span>
