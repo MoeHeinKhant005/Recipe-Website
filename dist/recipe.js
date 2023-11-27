@@ -1,3 +1,8 @@
+const exitBtn = document.querySelector('.exitBtn');
+exitBtn.addEventListener('click', e => {
+    location.href = "index.html";
+})
+
 function createList(list){
     for(let i = 0; i < list.length; i++){
         const ingredientList = document.querySelector('.ingredientList');
